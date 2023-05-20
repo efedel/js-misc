@@ -1,0 +1,7 @@
+HTML and Javascript to create a hexdump of a local file.
+
+Files:
+
+	hexdump.js		- Javascript file for hexdump code
+	hexdump_test.html	- Example HTML page for hexdump.js
+	hexdump.html		- Standalone HTML page with hexdump code inline

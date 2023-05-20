@@ -1,0 +1,29 @@
+<html><body>
+<br>
+<input type='file' id='binary-file' name='binary-file'></input>
+<br>
+<div id=dump></div>
+<br>
+<script src='hexdump.js'></script>
+<script type='text/javascript'>
+document.getElementById('binary-file').onchange = function(e) {
+    var f = e.target.files[0];
+    if (f) {
+        var container = document.getElementById('dump')
+        var div = document.createElement('dump');
+        var span = document.createElement('span');
+
+        fname = f.name.replace(/[^a-zA-Z0-9]/g, '-');
+        div.id = "hexdump-container-" + fname
+
+        span.innerHTML = '<b>' + f.name + '<b>';
+        span.id = "hexdump-caption-" + fname;
+        div.appendChild(span);
+
+        hexdump_file(f, div.id);
+
+        container.appendChild(div)
+    }
+}
+</script>
+</body></html>
